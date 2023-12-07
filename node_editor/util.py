@@ -4,6 +4,8 @@ import cv2
 import numpy as np
 import dearpygui.dearpygui as dpg
 
+def bayer_to_rgb(bayer_image, bayer_pattern=cv2.COLOR_BAYER_BG2BGR):
+    return cv2.cvtColor(bayer_image, bayer_pattern)
 
 def convert_cv_to_dpg(image, width, height):
     resize_image = cv2.resize(image, (width, height))
